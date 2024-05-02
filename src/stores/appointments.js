@@ -1,6 +1,5 @@
 import { ref, onMounted, computed } from "vue"
 import { defineStore } from "pinia"
-import ServicesAPI from "@/api/ServicesAPI"
 
 export const useAppointmentsStore = defineStore('appointments', () => {
 
@@ -23,6 +22,7 @@ export const useAppointmentsStore = defineStore('appointments', () => {
     })
 
     return {
+        services,
         onServiceSelected,
         isServiceSelected
     }
