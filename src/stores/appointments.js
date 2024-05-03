@@ -5,6 +5,17 @@ export const useAppointmentsStore = defineStore('appointments', () => {
 
     const services = ref([])
     const date = ref('')
+    const hours = ref([])
+
+    onMounted(() => {
+        const startHour = 10
+        const endHour = 19
+
+        for(let hour = startHour; hour <= endHour; hour++){
+            hours.value.push(hour+':00')
+        }
+
+    })
 
     function onServiceSelected(service){
         if(services.value.some(selectedService => selectedService._id === service._id)){
@@ -31,6 +42,7 @@ export const useAppointmentsStore = defineStore('appointments', () => {
     return {
         services,
         date,
+        hours,
         noServicesSelected,
         onServiceSelected,
         isServiceSelected,
