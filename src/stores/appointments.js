@@ -40,6 +40,10 @@ export const useAppointmentsStore = defineStore('appointments', () => {
         return services.value.reduce((total, service) => total + service.price, 0)
     })
 
+    const isValidReservation = computed(() => {
+        return services.value.length && date.value.length && time.value.length
+    })
+
     return {
         services,
         date,
@@ -48,6 +52,7 @@ export const useAppointmentsStore = defineStore('appointments', () => {
         noServicesSelected,
         onServiceSelected,
         isServiceSelected,
-        totalAmount
+        totalAmount,
+        isValidReservation
     }
 })
