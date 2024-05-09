@@ -23,6 +23,42 @@
             }"
         />
 
+        <FormKit
+            type="email"
+            label="Email"
+            name="email"
+            placeholder="Email de Registro"
+            validation="required|email"
+            :validation-messages="{
+                required: 'El email es obligatorio',
+                email: 'Email no válido',
+            }"
+        />
+
+        <FormKit
+            type="password"
+            label="Password"
+            name="password"
+            placeholder="Password de usuario - Min 8 Caracteres"
+            validation="required|length:8"
+            :validation-messages="{
+                required: 'El password es obligatorio',
+                length: 'El password debe contener al menos 8 caracteres',
+            }"
+        />
+
+        <FormKit
+            type="password"
+            label="Password"
+            name="password_confirm"
+            placeholder="Repite el password"
+            validation="required|confirm"
+            :validation-messages="{
+                required: 'El password es obligatorio',
+                confirm: 'Los passwords no son iguales',
+            }"
+        />
+
         <FormKit type="submit">Crear Cuenta</FormKit>
     </FormKit>
 </template>
