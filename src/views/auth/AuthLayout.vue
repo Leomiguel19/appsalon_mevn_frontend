@@ -8,8 +8,6 @@
 
 <template>
     <div class="mx-auto lg:w-4/5 mt-20">
-        <h1>Desde Auth Layout</h1>
-
         <RouterView/>
 
         <nav class="mt-10 flex flex-col items-center space-y-5 lg:flex-row lg:justify-between lg:space-y-0">
