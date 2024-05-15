@@ -15,6 +15,7 @@
                 <button
                     type="button"
                     class="bg-red-600 hover:bg-red-700 p-2 text-white uppercase text-xs font-extrabold rounded-lg"
+                    @click="user.logout"
                 >
                     Cerrar Sesión
                 </button>
