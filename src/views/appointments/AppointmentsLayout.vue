@@ -1,5 +1,7 @@
 <script setup>
+    import { useUserStore } from '@/stores/user'
 
+    const user = useUserStore()
 </script>
 
 <template>
@@ -8,7 +10,7 @@
 
         <div class="flex flex-col space-y-5">
             <div class="flex gap-2 items-center">
-                <p class="text-white text-right">Hola: Usuario</p>
+                <p class="text-white text-right">Hola: {{ user.getUserName }}</p>
 
                 <button
                     type="button"
