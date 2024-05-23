@@ -9,6 +9,7 @@ export const useUserStore = defineStore('user', () => {
     const router = useRouter()
     const user = ref({})
     const userAppointments = ref([])
+    const loading = ref(true)
 
     onMounted(async () => {
         try {
@@ -17,12 +18,15 @@ export const useUserStore = defineStore('user', () => {
             await getUserAppointments()
         } catch (error) {
             console.log()
+        }finally{
+            loading.value = false
         }
     })
 
     async function getUserAppointments() {
         const { data } = await AppointmentAPI.getUserAppointments(user.value._id)
         userAppointments.value = data
+        console.log(data)
     }
 
     function logout() {
@@ -41,5 +45,6 @@ export const useUserStore = defineStore('user', () => {
         logout,
         getUserName,
         noAppointments,
+        loading,
     }
 })
