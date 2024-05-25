@@ -9,7 +9,7 @@
         <RouterLink
             :to="{name: 'edit-appointment'}"
             class="flex-1 text-center p-3 uppercase font-extrabold hover:bg-blue-600 hover:text-white"
-            :class="route.name === 'edit-appointment' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'"
+            :class="route.name === 'edit-appointment' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'" 
         >
             Servicios
         </RouterLink>
