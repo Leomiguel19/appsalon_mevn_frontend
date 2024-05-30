@@ -7,6 +7,7 @@ import { convertToISO, convertToDDMMYYY } from "@/helpers/date"
 
 export const useAppointmentsStore = defineStore('appointments', () => {
 
+    const appointmentId = ref('')
     const services = ref([])
     const date = ref('')
     const time = ref('')
@@ -34,12 +35,21 @@ export const useAppointmentsStore = defineStore('appointments', () => {
         }
 
         console.log(data)
+
+        if(appointmentId.value){
+            appointmentsByDate.value = data.filter(appointment => appointment._id !== appointmentId.value)
+            time.value = data.filter(appointment => appointment._id === appointmentId.value)[0].time
+        }else{
+            appointmentsByDate.value = date
+        }
     })
 
     function setSelectedAppointment(appointment) {
         console.log(appointment)
         services.value = appointment.services
         date.value = convertToDDMMYYY(appointment.date)
+        time.value = appointment.time
+        appointmentId.value = appointment._id
     }
 
     function onServiceSelected(service){
