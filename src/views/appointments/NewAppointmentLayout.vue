@@ -11,6 +11,7 @@ import { onMounted } from 'vue';
     })
 </script>
 
+
 <template>
     <nav class="my-5 flex gap-3">
         <RouterLink
